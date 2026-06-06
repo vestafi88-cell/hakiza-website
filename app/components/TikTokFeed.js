@@ -40,7 +40,7 @@ export default function TikTokFeed({ videos = [], profile = "", handle = "" }) {
             </span>
             <span className={styles.headText}>
               <span className={styles.handle}>@{handle || "tiktok"}</span>
-              <span className={styles.headLabel}>Latest videos</span>
+              <span className={styles.headLabel}>Latest from TikTok</span>
             </span>
           </header>
 
@@ -89,23 +89,21 @@ export default function TikTokFeed({ videos = [], profile = "", handle = "" }) {
               <span className={styles.placeholderIcon} aria-hidden="true">
                 <TikTokGlyph />
               </span>
-              <p className={styles.placeholderTitle}>Latest videos, coming soon.</p>
+              <p className={styles.placeholderTitle}>Latest videos coming soon.</p>
               <p className={styles.placeholderSub}>
                 The build, in motion — straight from the field.
               </p>
             </div>
           )}
 
-          {profile ? (
-            <a
-              href={profile}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.follow}
-            >
-              Follow on TikTok
-            </a>
-          ) : null}
+          <a
+            href={profile || "https://www.tiktok.com/@hakizalive"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.follow}
+          >
+            Watch more on TikTok
+          </a>
         </div>
       </div>
     </div>

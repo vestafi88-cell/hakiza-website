@@ -173,9 +173,9 @@ export default async function Home() {
       <section className="section section--warm" id="journey">
         <div className="container">
           <span className="section-index">03 — The Journey</span>
-          <p className={`lead ${styles.journeyHeader}`}>
+          <h2 className={`lead ${styles.journeyHeader}`}>
             Fifteen years. No shortcuts.
-          </p>
+          </h2>
 
           <div className={`grid-2 ${styles.journeyGrid}`}>
             <ol className={styles.timeline}>
@@ -191,7 +191,7 @@ export default async function Home() {
             </ol>
 
             <div className={styles.journeyMedia}>
-              <span className={styles.journeyMediaLabel}>In motion</span>
+              <span className={styles.journeyMediaLabel}>Latest from TikTok</span>
               <TikTokFeed
                 videos={tiktokVideos}
                 profile={TIKTOK_PROFILE}
@@ -206,10 +206,10 @@ export default async function Home() {
       <section className="section section--cream" id="recognition">
         <div className="container">
           <span className="section-index">04 — Recognition</span>
-          <p className={`lead ${styles.recogHeader}`}>
+          <h2 className={`lead ${styles.recogHeader}`}>
             The recognition came because the work was consistent, not the other
             way around.
-          </p>
+          </h2>
 
           <div className={`grid-2 ${styles.recogGrid}`}>
             <div>
@@ -278,7 +278,8 @@ export default async function Home() {
           </h2>
           <p className={styles.communityBody}>
             The most durable thing a founder can build is the community around
-            the company. Vestafi is the grandmaster, built on the belief that
+            the company. <a className={styles.inlineLink} href="#vestafi">Vestafi</a> is
+            the grandmaster, built on the belief that
             the right people with the right structure and information can own
             assets that create generational wealth. Beyond Vestafi, there is a
             community for founders and operators who want to stay sharp on AI.
@@ -291,6 +292,9 @@ export default async function Home() {
       <section className="section section--warm" id="gallery">
         <div className="container">
           <span className="section-index">07 — In the Field</span>
+          <h2 className={`lead ${styles.galleryHeader}`}>
+            Fifteen years of building, in the field.
+          </h2>
           <div className={styles.gallery}>
             {GALLERY.map((g, i) => (
               <div

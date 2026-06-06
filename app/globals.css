@@ -230,13 +230,14 @@ img {
 .placeholder {
   position: relative;
   width: 100%;
-  background: var(--placeholder-light);
   overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+  background:
+    radial-gradient(120% 100% at 30% 0%, #f1ece2 0%, var(--placeholder-light) 60%);
 }
-.section--dark .placeholder { background: var(--placeholder-dark); }
+.section--dark .placeholder {
+  background:
+    radial-gradient(120% 100% at 30% 0%, #11202f 0%, var(--placeholder-dark) 65%);
+}
 .placeholder__img {
   position: absolute;
   inset: 0;
@@ -244,18 +245,46 @@ img {
   height: 100%;
   object-fit: cover;
 }
-.placeholder__label {
-  position: relative;
-  z-index: 2;
-  margin: 1rem;
+.placeholder__inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  text-align: center;
+  padding: 1.5rem;
+}
+/* thin inset gold frame */
+.placeholder__frame {
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(139, 105, 20, 0.28);
+  pointer-events: none;
+}
+.section--dark .placeholder__frame { border-color: rgba(201, 164, 82, 0.3); }
+.placeholder__eyebrow {
   font-family: var(--font-jost), sans-serif;
   font-weight: 500;
-  font-size: 0.62rem;
-  letter-spacing: 0.22em;
+  font-size: 0.56rem;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(28, 23, 16, 0.4);
+  color: var(--gold-light);
 }
-.section--dark .placeholder__label { color: rgba(234, 228, 218, 0.4); }
+.section--dark .placeholder__eyebrow { color: var(--gold-dark); }
+.placeholder__icon { color: var(--gold-light); opacity: 0.55; }
+.section--dark .placeholder__icon { color: var(--gold-dark); opacity: 0.6; }
+.placeholder__label {
+  font-family: var(--font-cormorant), serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  color: rgba(28, 23, 16, 0.55);
+  max-width: 22ch;
+}
+.section--dark .placeholder__label { color: rgba(234, 228, 218, 0.55); }
 
 /* utility */
 .muted { color: var(--text-muted); }

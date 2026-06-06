@@ -17,16 +17,21 @@
 //  that card degrades gracefully to a tap-to-open link; the page is unaffected.
 // ─────────────────────────────────────────────────────────────────────────
 
-/** Your public TikTok profile (used for the "Follow" button + header). */
-export const TIKTOK_PROFILE = ""; // e.g. "https://www.tiktok.com/@hakizaronald"
+/** Your public TikTok profile (used for the "Watch more" button + header). */
+export const TIKTOK_PROFILE = "https://www.tiktok.com/@hakizalive";
 
 /** Your @handle shown in the phone header (no leading @). */
-export const TIKTOK_HANDLE = "hakizaronald";
+export const TIKTOK_HANDLE = "hakizalive";
 
-/** Paste full TikTok video URLs here — newest first. */
+/**
+ * Paste full TikTok video URLs here — NEWEST FIRST.
+ * Get a URL by opening a video on tiktok.com and copying the address bar, e.g.
+ *   https://www.tiktok.com/@hakizalive/video/7325000000000000000
+ * Leave empty and the card shows the "coming soon" placeholder.
+ */
 export const TIKTOK_VIDEOS = [
-  // "https://www.tiktok.com/@hakizaronald/video/7325000000000000000",
-  // "https://www.tiktok.com/@hakizaronald/video/7320000000000000000",
+  // "https://www.tiktok.com/@hakizalive/video/7325000000000000000",
+  // "https://www.tiktok.com/@hakizalive/video/7320000000000000000",
 ];
 
 const OEMBED = "https://www.tiktok.com/oembed";

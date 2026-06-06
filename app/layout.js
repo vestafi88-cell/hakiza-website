@@ -2,7 +2,8 @@ import { Cormorant_Garamond, Jost, Pinyon_Script } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
-const SITE_URL = "https://hakizaronald.com";
+// Canonical production domain is the www host.
+const SITE_URL = "https://www.hakizaronald.com";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -28,7 +29,7 @@ const pinyon = Pinyon_Script({
 
 const TITLE = "Hakiza Ronald — Founder of Vestafi | African Entrepreneur";
 const DESCRIPTION =
-  "Hakiza Ronald is a Ugandan entrepreneur, YALI Fellow, and founder of Vestafi — the platform moving Africa's growing wealth into property ownership at scale. Founder of Ugabus (acquired by Treepz), Africa Entrepreneurship Award winner, and builder at the intersection of startups, AI, and East African real estate.";
+  "Hakiza Ronald is a Ugandan entrepreneur, YALI Fellow, and founder of Vestafi — the platform opening property and condominium apartment ownership to millions of Africans. Founder of Ugabus.com (acquired by Treepz), Africa Entrepreneurship Award winner, and a startup and AI builder reshaping property ownership in Uganda and across East Africa.";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -43,20 +44,24 @@ export const metadata = {
   publisher: "Hakiza Ronald",
   keywords: [
     "Hakiza Ronald",
+    "Hakiza Ronald Uganda",
+    "Ugabus founder",
+    "Ugabus acquired by Treepz",
+    "Ugabus.com",
+    "Treepz Uganda",
     "Vestafi",
     "Vestafi founder",
-    "Ugabus founder",
-    "Ugabus.com",
-    "Treepz acquisition",
     "African entrepreneur",
-    "Uganda founder",
-    "East Africa startup",
+    "Ugandan entrepreneur",
+    "startup founder Uganda",
+    "AI entrepreneur Africa",
+    "property ownership Uganda",
+    "condominium apartment ownership",
+    "fractional real estate Africa",
+    "founder letters",
+    "entrepreneurship journey",
     "YALI Fellow",
     "Africa Entrepreneurship Award",
-    "property ownership Africa",
-    "fractional real estate Africa",
-    "AI",
-    "startup building",
     "Kampala entrepreneur",
     "generational wealth Africa",
   ],
@@ -134,6 +139,7 @@ const jsonLd = {
       worksFor: { "@id": `${SITE_URL}/#vestafi` },
       sameAs: [
         "https://www.linkedin.com/in/hakiza-ronald-40766892/",
+        "https://www.tiktok.com/@hakizalive",
         "https://vestafi.co",
       ],
       knowsAbout: [
@@ -164,6 +170,24 @@ const jsonLd = {
         name: "Kampala, Uganda",
       },
       industry: "PropTech / Real Estate Technology",
+    },
+    {
+      "@type": "Blog",
+      "@id": `${SITE_URL}/#letters`,
+      url: `${SITE_URL}/#letters`,
+      name: "Founder Letters by Hakiza Ronald",
+      description:
+        "A monthly letter on building in East Africa — the entrepreneurship journey, the property market, and the decade ahead.",
+      inLanguage: "en",
+      author: { "@id": `${SITE_URL}/#person` },
+      publisher: { "@id": `${SITE_URL}/#person` },
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: [
+        "Entrepreneurship",
+        "Startup building",
+        "Property ownership in Uganda",
+        "Artificial intelligence in Africa",
+      ],
     },
   ],
 };
