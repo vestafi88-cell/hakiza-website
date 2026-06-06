@@ -149,6 +149,16 @@ on the Hobby plan.)
 
 ---
 
+## Archived old site (`/old`)
+
+The previous WordPress portfolio is preserved as a self-contained static
+snapshot in `public/old/` and served at **`/old`** (rewrite in
+`next.config.mjs`; a `<base href="/old/">` tag in the snapshot keeps its assets
+resolving). It is a read-only archive — WordPress login/search/forms don't run.
+To remove it later, delete `public/old/` and the `/old` rewrite. This is a
+content snapshot only; keep your full WordPress files + database backup from
+NameHero cPanel as the authoritative backup.
+
 ## Deployment
 
 ```bash
