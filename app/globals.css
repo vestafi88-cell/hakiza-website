@@ -1,0 +1,269 @@
+:root {
+  /* Backgrounds */
+  --bg-warm: #FDFAF5;
+  --bg-cream: #F3EDE3;
+  --bg-dark: #07090F;
+
+  /* Text */
+  --text-body: #1C1710;
+  --text-muted: rgba(28, 23, 16, 0.55);
+  --text-dark-body: rgba(234, 228, 218, 0.5);
+  --text-dark-strong: #EAE4DA;
+
+  /* Gold */
+  --gold-light: #8B6914;
+  --gold-dark: #C9A452;
+
+  /* Placeholder fills */
+  --placeholder-light: #EAE3D8;
+  --placeholder-dark: #0C1828;
+
+  /* Layout */
+  --nav-height: 64px;
+  --max-width: 1200px;
+  --section-pad-y: clamp(72px, 10vw, 140px);
+  --gutter: clamp(20px, 5vw, 64px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-warm);
+  color: var(--text-body);
+  font-family: var(--font-jost), system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 700;
+  line-height: 1.08;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0 0 1.25em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- Shared layout helpers ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.section {
+  padding-top: var(--section-pad-y);
+  padding-bottom: var(--section-pad-y);
+}
+
+.section--warm { background: var(--bg-warm); color: var(--text-body); }
+.section--cream { background: var(--bg-cream); color: var(--text-body); }
+.section--dark {
+  background: var(--bg-dark);
+  color: var(--text-dark-strong);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Section index marker e.g. "01 — The Founder" */
+.section-index {
+  font-family: var(--font-jost), sans-serif;
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin: 0 0 1.5rem;
+  display: inline-block;
+}
+.section--dark .section-index { color: var(--gold-dark); }
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 80px);
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  font-family: var(--font-jost), sans-serif;
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.95em 1.8em;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn--dark {
+  background: var(--bg-dark);
+  color: var(--text-dark-strong);
+  border-color: var(--bg-dark);
+}
+.btn--dark:hover { background: transparent; color: var(--bg-dark); }
+
+.btn--outline {
+  background: transparent;
+  color: var(--text-body);
+  border-color: rgba(28, 23, 16, 0.3);
+}
+.btn--outline:hover { border-color: var(--text-body); background: var(--text-body); color: var(--bg-warm); }
+
+.btn--gold {
+  background: var(--gold-light);
+  color: #fff;
+  border-color: var(--gold-light);
+}
+.btn--gold:hover { background: transparent; color: var(--gold-light); }
+
+.section--dark .btn--gold {
+  background: var(--gold-dark);
+  color: var(--bg-dark);
+  border-color: var(--gold-dark);
+}
+.section--dark .btn--gold:hover { background: transparent; color: var(--gold-dark); }
+
+.btn--gold-outline {
+  background: transparent;
+  color: var(--gold-dark);
+  border-color: rgba(201, 164, 82, 0.5);
+}
+.btn--gold-outline:hover { border-color: var(--gold-dark); background: var(--gold-dark); color: var(--bg-dark); }
+
+/* ---------- Logo ---------- */
+.logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.12em;
+  line-height: 1;
+}
+.logo__hakiza {
+  font-family: var(--font-jost), sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 1.02rem;
+}
+.logo__ronald {
+  font-family: var(--font-pinyon), cursive;
+  font-size: 1.7rem;
+  line-height: 0;
+  position: relative;
+  top: 0.05em;
+  color: var(--gold-light);
+}
+.logo__com {
+  font-family: var(--font-jost), sans-serif;
+  font-weight: 300;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+.section--dark .logo__ronald,
+.footer .logo__ronald { color: var(--gold-dark); }
+.section--dark .logo__com,
+.footer .logo__com { color: var(--text-dark-body); }
+.section--dark .logo__hakiza,
+.footer .logo__hakiza { color: var(--text-dark-strong); }
+
+/* ---------- Blockquote ---------- */
+.blockquote {
+  border-left: 2px solid var(--gold-light);
+  padding-left: 1.5rem;
+  font-family: var(--font-cormorant), serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.3rem, 2.2vw, 1.65rem);
+  line-height: 1.4;
+  color: var(--text-body);
+}
+.section--dark .blockquote {
+  border-left-color: var(--gold-dark);
+  color: var(--text-dark-strong);
+}
+
+/* ---------- Image placeholder ---------- */
+.placeholder {
+  position: relative;
+  width: 100%;
+  background: var(--placeholder-light);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.section--dark .placeholder { background: var(--placeholder-dark); }
+.placeholder__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.placeholder__label {
+  position: relative;
+  z-index: 2;
+  margin: 1rem;
+  font-family: var(--font-jost), sans-serif;
+  font-weight: 500;
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(28, 23, 16, 0.4);
+}
+.section--dark .placeholder__label { color: rgba(234, 228, 218, 0.4); }
+
+/* utility */
+.muted { color: var(--text-muted); }
+.section--dark .muted { color: var(--text-dark-body); }
+.lead {
+  font-family: var(--font-cormorant), serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  line-height: 1.35;
+}
